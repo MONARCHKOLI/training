@@ -1,16 +1,17 @@
-<a href="/">HOME</a>
-
 <h1><%= @article.title %></h1>
 
 <p><%= @article.body %></p>
 
-  <%= link_to "Edit", edit_article_path(@article) %>
-  <%= link_to "Destroy", article_path(@article), data: {
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %>
+                  } %></li>
+</ul>
 
 <h2>Comments</h2>
+<%# byebug%>
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
